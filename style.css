@@ -1,8 +1,11 @@
 /* style.css */
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
+
 section {
     /* Assuming your navbar is roughly 80px tall */
-    scroll-margin-top: 80px; 
+    scroll-margin-top: 80px;
 }
 
 /* --- 1. CSS Variables for Corporate Palette --- */
@@ -24,11 +27,16 @@ section {
 
 /* --- Dark Mode Variables --- */
 [data-theme="dark"] {
-    --background-light: #0f172a; /* Deep Slate/Navy background */
-    --background-alt: #1e293b; /* Slightly lighter slate for sections */
-    --text-main: #f8fafc; /* Crisp white text */
-    --text-muted: #94a3b8; /* Muted gray text */
-    --primary-color: #ffffff; /* White headings */
+    --background-light: #0f172a;
+    /* Deep Slate/Navy background */
+    --background-alt: #1e293b;
+    /* Slightly lighter slate for sections */
+    --text-main: #f8fafc;
+    /* Crisp white text */
+    --text-muted: #94a3b8;
+    /* Muted gray text */
+    --primary-color: #ffffff;
+    /* White headings */
     --secondary-color: #cbd5e1;
     /* Note: We keep --accent-color the same so your blue branding stays consistent */
 }
@@ -275,7 +283,8 @@ h2 {
     }
 
     .mobile-menu-btn {
-        display: block; /* Show the button */
+        display: block;
+        /* Show the button */
         background: none;
         border: none;
         font-size: 1.5rem;
@@ -284,7 +293,8 @@ h2 {
     }
 
     .nav-links {
-        display: none; /* Hide links by default on mobile */
+        display: none;
+        /* Hide links by default on mobile */
         flex-direction: column;
         position: absolute;
         top: 100%;
@@ -298,7 +308,7 @@ h2 {
 
     /* We will add this class using JavaScript */
     .nav-links.active {
-        display: flex; 
+        display: flex;
     }
 
     .contact-container {
@@ -434,7 +444,8 @@ h2 {
 
 .cert-card:hover {
     border-left-width: 8px;
-    background-color: var(--background-alt); /* Dynamically changes based on theme */
+    background-color: var(--background-alt);
+    /* Dynamically changes based on theme */
 }
 
 .cert-date {
