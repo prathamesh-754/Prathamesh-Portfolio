@@ -1,0 +1,604 @@
+/* style.css */
+html { scroll-behavior: smooth; }
+section {
+    /* Assuming your navbar is roughly 80px tall */
+    scroll-margin-top: 80px; 
+}
+
+/* --- 1. CSS Variables for Corporate Palette --- */
+:root {
+    --primary-color: #0f172a;
+    /* Deep Slate/Navy */
+    --secondary-color: #334155;
+    /* Medium Gray */
+    --accent-color: #0284c7;
+    /* Professional Blue */
+    --background-light: #ffffff;
+    --background-alt: #f8fafc;
+    /* Very light gray for section contrast */
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+
+    --font-primary: 'Inter', sans-serif;
+}
+
+/* --- Dark Mode Variables --- */
+[data-theme="dark"] {
+    --background-light: #0f172a; /* Deep Slate/Navy background */
+    --background-alt: #1e293b; /* Slightly lighter slate for sections */
+    --text-main: #f8fafc; /* Crisp white text */
+    --text-muted: #94a3b8; /* Muted gray text */
+    --primary-color: #ffffff; /* White headings */
+    --secondary-color: #cbd5e1;
+    /* Note: We keep --accent-color the same so your blue branding stays consistent */
+}
+
+/* Style for the toggle button */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Adjust navbar layout to accommodate the new button */
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* --- 2. Base Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-main);
+    background-color: var(--background-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- 3. Typography Hierarchy --- */
+h1,
+h2,
+h3 {
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- 4. Buttons (Corporate Style) --- */
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    /* Slight rounding, not pill-shaped */
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    border: 1px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: var(--background-light);
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a:not(.btn-primary) {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:not(.btn-primary):hover {
+    color: var(--accent-color);
+}
+
+/* --- Hero Section Styling --- */
+.hero-section {
+    padding: 6rem 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.subtitle {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.hero-summary {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --- Stats Grid --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 3rem;
+}
+
+.stat-card {
+    background: var(--background-light);
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* --- About Section --- */
+.bg-alt {
+    background-color: var(--background-alt);
+    padding: 5rem 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.about-text strong {
+    color: var(--text-main);
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    aspect-ratio: 0.8 / 1;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .mobile-menu-btn {
+        display: block; /* Show the button */
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--background-light);
+        padding: 1rem;
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    /* We will add this class using JavaScript */
+    .nav-links.active {
+        display: flex; 
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Hide the button on desktop */
+@media (min-width: 769px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* --- Reusable Section Headers --- */
+.section-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.projects-section,
+.certifications-section {
+    padding: 5rem 0;
+}
+
+/* --- Card Grid System --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* --- Project Cards --- */
+.card {
+    background: var(--background-light);
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* If using real images, add this to your CSS: 
+.card img { width: 100%; height: 200px; object-fit: cover; } 
+*/
+
+.card-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.card-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+    display: inline-block;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Tech Badges --- */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-badge {
+    background-color: #f1f5f9;
+    color: var(--secondary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+}
+
+/* --- Certification Cards (Text Focused) --- */
+.cert-card {
+    background: var(--background-light);
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 2rem;
+    border-left: 4px solid var(--accent-color);
+    /* Professional accent line */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: border-left-width 0.2s ease, background-color 0.2s ease;
+}
+
+
+.cert-card:hover {
+    border-left-width: 8px;
+    background-color: var(--background-alt); /* Dynamically changes based on theme */
+}
+
+.cert-date {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.cert-issuer {
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.cert-id {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-family: monospace;
+}
+
+/* --- Experience Timeline --- */
+.experience-section {
+    padding: 5rem 0;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid #e2e8f0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2.45rem;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    border: 3px solid var(--background-light);
+    box-shadow: 0 0 0 2px #e2e8f0;
+}
+
+.timeline-date {
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-company {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.timeline-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* --- Skills Section --- */
+.skills-section {
+    padding: 5rem 0;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-tag {
+    background: var(--background-light);
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.2s ease;
+}
+
+.skill-tag:hover {
+    border-color: var(--accent-color);
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 6rem 0;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-text h2 {
+    color: white;
+}
+
+.contact-text p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 400px;
+}
+
+.contact-links h3 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-links ul {
+    list-style: none;
+}
+
+.contact-links li {
+    margin-bottom: 1rem;
+}
+
+.contact-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+    color: white;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #0b1120;
+    /* Slightly darker than primary */
+    color: #64748b;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
