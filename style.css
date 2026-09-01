@@ -315,9 +315,11 @@ h2 {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+
     .card-header {
         flex-direction: column;
     }
+
     .badge {
         align-self: flex-start;
     }
@@ -521,13 +523,15 @@ h2 {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: #94a3b8; /* Gray for past education */
+    background-color: #94a3b8;
+    /* Gray for past education */
     border: 3px solid var(--background-light);
     box-shadow: 0 0 0 2px var(--background-light);
 }
 
 .timeline-marker.active {
-    background-color: var(--accent-color); /* Blue for current education */
+    background-color: var(--accent-color);
+    /* Blue for current education */
 }
 
 /* The Cards */
@@ -545,7 +549,8 @@ h2 {
 
 .timeline-card:hover {
     border-color: var(--accent-color);
-    transform: translateX(4px); /* Slight hover animation */
+    transform: translateX(4px);
+    /* Slight hover animation */
 }
 
 .card-header {
@@ -574,13 +579,15 @@ h2 {
 
 .badge-success {
     background-color: rgba(16, 185, 129, 0.1);
-    color: #10b981; /* Green */
+    color: #10b981;
+    /* Green */
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .badge-secondary {
     background-color: rgba(148, 163, 184, 0.1);
-    color: #64748b; /* Gray */
+    color: #64748b;
+    /* Gray */
     border: 1px solid rgba(148, 163, 184, 0.2);
 }
 
@@ -637,7 +644,7 @@ h2 {
 /* --- Contact Section (New Layout) --- */
 .contact-section {
     padding: 6rem 0;
-    background-color: var(--background-light); 
+    background-color: var(--background-light);
 }
 
 .contact-wrapper {
@@ -759,20 +766,23 @@ h2 {
 [data-theme="dark"] .form-group input,
 [data-theme="dark"] .form-group textarea {
     border-color: #475569;
-    background-color: #0f172a; /* Matches dark background */
+    background-color: #0f172a;
+    /* Matches dark background */
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2); /* Soft blue glow */
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+    /* Soft blue glow */
 }
 
 .btn-submit {
     width: 100%;
     padding: 1rem;
-    background: linear-gradient(135deg, #3b82f6, #4f46e5); /* Gradient from image */
+    background: linear-gradient(135deg, #3b82f6, #4f46e5);
+    /* Gradient from image */
     color: white;
     border: none;
     border-radius: 6px;
